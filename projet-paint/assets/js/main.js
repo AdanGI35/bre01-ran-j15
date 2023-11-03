@@ -41,31 +41,31 @@ window.addEventListener("DOMContentLoaded", function(){
     loadPalette(["#22f6f3", "#3daf7e", "#ffffff", "#ec8236", "#a9a7ee", "#ecc606", "#f783f2", "#e89e80"]);
 
     
+    let headerDiv = document.querySelectorAll("header div");
     
-    let headerDiv = document.querySelector("header div");
-        
-        
-        for (let i = 0; i < headerDiv.length; i++) {
+    for(let i = 0; i < headerDiv.length; i++) {
+
         headerDiv[i].addEventListener("click", selectColor);
-        console.log(getSelectedColor());
+            console.log(getSelectedColor());
     }
-
+ 
     // le code de l'étape 2 se passe ici
-    let mainDiv = document.querySelector("main div");
-        
-        for (let i = 0; i < mainDiv.length; i++) {
-            mainDiv.addEventListener("click", function(event){
-                let selectedColor= getSelectedColor();
-                
-                if(selectedColor){
-                     event.target.style.backgroundColor = selectedColor;
-                }
-        });
-        }
-
     
+    
+    
+    let mainDiv = document.querySelectorAll("main div");
 
+    for (let i = 0; i < mainDiv.length; i++) {
+        mainDiv[i].addEventListener("click", function(event) {
+            let selectedColor = getSelectedColor();
 
-    // le code de l'étape 3 se passe ici
-
+         if (selectedColor) {
+                if (event.target.style.backgroundColor) {
+} 
+                else {
+                    event.target.style.backgroundColor = selectedColor;
+                }
+            }
+        });
+    }
 });
